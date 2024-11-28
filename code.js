@@ -1,4 +1,4 @@
-are_isomorphic(graph1, graph2) {
+function are_isomorphic(graph1, graph2) {
 
     if(graph1.length !== graph2.length){
         return false;
@@ -10,13 +10,13 @@ are_isomorphic(graph1, graph2) {
     
     let map = [];
 
-    for (let i=0; i < graph1.length; i++){
+    for (let i = 0; i < graph1.length; i++){
         map[i] = null;
     }
 
-    let visited = []
+    let visited = [];
 
-    for (let i=0; i < graph2.length; i++){
+    for (let i = 0; i < graph2.length; i++){
         visited[i] = false;
     }
 
@@ -28,37 +28,45 @@ are_isomorphic(graph1, graph2) {
 
         for (let potenNext = 0; potenNext < graph2.length; potenNext++){
 
-            if (!visited[potenNext] && isPossible(node,potenNext,map)){
+            if (!visited[potenNext] && isPossible(node, potenNext, map)){
 
                 map[node] = potenNext;
-                visted[node = potenNext];
+                visited[potenNext] = true;
 
-                if(backtrack(node+1)){
+                if(backtrack(node + 1)){
                     return true;
                 }
 
                 map[node] = null;
-                visited[potenNext] = False;
-
+                visited[potenNext] = false;
             }
-            return false;
-
         }
 
-        
-
-        
+        return false;
     }
 
+    function isPossible(node1, node2, map){
+            
+        for (let neighbor = 0; neighbor < graph1.length; neighbor++){
 
-    //simular to the logic in graph-representations for edge traversal
+            if (graph1[node1][neighbor] > 0){
+
+                let mappedNeighbor = map[neighbor];
+                if ((mappedNeighbor !== null) && (graph1[node1][neighbor] !== graph2[node2][mappedNeighbor])){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     function countEdges(graph){
-        let totalEdge =0;
+        let totalEdge = 0;
 
-        for(let i=0;i < graph.length; i++){
+        for(let i = 0; i < graph.length; i++){
             let rowEdge = 0;
 
-            for (let j=0; j < graph[i].length; j++){
+            for (let j = 0; j < graph[i].length; j++){
                 rowEdge += graph[i][j];
             }
             totalEdge += rowEdge;
@@ -66,4 +74,6 @@ are_isomorphic(graph1, graph2) {
 
         return totalEdge;
     }
+
+    return backtrack(0);
 }
