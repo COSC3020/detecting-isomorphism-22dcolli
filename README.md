@@ -23,8 +23,12 @@ suspected, charges may be filed against me without prior notice.”
 ## Note
 I did not complete this excersise last semester, so I am attempting this completely from scratch. Ended up needing replit AI tool for one inner if statement and another syntax error both marked in the code. In addition, I also modified the logic used in my graph-representations which is also marked in the code.
 
-## Answer
 
 ## Runtime Analysis
 
 What is the worst-case big $\Theta$ time complexity of your algorithm?
+
+### Answer
+
+I believe that the worst case for this algorithm would be that it would have to check everything before eventually deciding that the two graphs were not isomorphic. That means that it would complete the easy checks which needs to check the matrixes for both graphs for a $/Theta(V^2)$
+
