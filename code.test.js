@@ -2,7 +2,7 @@ const fs = require('fs');
 const assert = require('assert');
 
 eval(fs.readFileSync('code.js')+'');
-
+////
 let graph1 = [
     [0, 1, 0],
     [1, 0, 1],
@@ -14,7 +14,9 @@ let graph2 = [
     [1, 0, 1],
     [0, 1, 0]
 ];
+////
 
+////
 let fullyConnected1 =[
     [0, 1, 1, 1],
     [1, 0, 1, 1],
@@ -28,7 +30,24 @@ let fullyConnected2 =[
     [1, 1, 0, 1],
     [1, 1, 1, 0]
 ];
+////
+
+////
+let notSame1 = [
+    [0, 1, 0],
+    [1, 0, 1],
+    [0, 1, 0]
+];
+
+let notSame2 =[
+    [0, 1, 1, 1],
+    [1, 0, 1, 1],
+    [1, 1, 0, 1],
+    [1, 1, 1, 0]
+];
+//
     
 
 assert(are_isomorphic(graph1, graph2) === true);
 assert(are_isomorphic(fullyConnected1, fullyConnected2) === true);
+assert(are_isomorphic(notSame1, notSame2) === false);
