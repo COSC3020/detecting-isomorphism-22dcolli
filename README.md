@@ -30,5 +30,5 @@ What is the worst-case big $\Theta$ time complexity of your algorithm?
 
 ### Answer
 
-I believe that the worst case for this algorithm would be that it would have to check everything before eventually deciding that the two graphs were not isomorphic. That means that it would complete the easy checks which needs to check the matrixes for both graphs for a $/Theta(V^2)$
+I believe that the worst case for this algorithm would be that it would have to check everything before eventually deciding that the two graphs were not isomorphic. That means that it would complete the easy checks which needs to check the matrixes for both graphs for a $\Theta(V^2)$
 
