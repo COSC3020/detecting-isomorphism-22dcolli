@@ -1,9 +1,11 @@
 function are_isomorphic(graph1, graph2) {
 
+    //easy check 1 for number of nodes
     if(graph1.length !== graph2.length){
         return false;
     }
 
+    //easy check 2 for same number of edges
     if(countEdges(graph1) !== countEdges(graph2)){
         return false;
     }
@@ -20,6 +22,7 @@ function are_isomorphic(graph1, graph2) {
         visited[i] = false;
     }
 
+    //backtracks if conditions arent met
     function backtrack(node){
 
         if (node === graph1.length){
@@ -37,6 +40,8 @@ function are_isomorphic(graph1, graph2) {
                     return true;
                 }
 
+                //while fixing the isPossible function, replit AI tool noticed I originally wrote
+                //"map[node] = false" instead of null
                 map[node] = null;
                 visited[potenNext] = false;
             }
@@ -45,6 +50,7 @@ function are_isomorphic(graph1, graph2) {
         return false;
     }
 
+    //checks the matrix to see if mapping is possible
     function isPossible(node1, node2, map){
             
         for (let neighbor = 0; neighbor < graph1.length; neighbor++){
@@ -52,6 +58,9 @@ function are_isomorphic(graph1, graph2) {
             if (graph1[node1][neighbor] > 0){
 
                 let mappedNeighbor = map[neighbor];
+
+                //had the isPossible function mostly set up, but I couldn't get this if function correct or it would throw errors,
+                //so I used replit's ai tool to complete this inner if statement
                 if ((mappedNeighbor !== null) && (graph1[node1][neighbor] !== graph2[node2][mappedNeighbor])){
                     return false;
                 }
@@ -60,6 +69,7 @@ function are_isomorphic(graph1, graph2) {
         return true;
     }
 
+    //simular function to graph-representations but with added counters for use here
     function countEdges(graph){
         let totalEdge = 0;
 
@@ -77,3 +87,21 @@ function are_isomorphic(graph1, graph2) {
 
     return backtrack(0);
 }
+
+
+//initial easy test
+/*
+const graph1 = [
+    [0, 1, 0],
+    [1, 0, 1],
+    [0, 1, 0]
+];
+
+const graph2 = [
+    [0, 1, 0],
+    [1, 0, 1],
+    [0, 1, 0]
+];
+
+console.log(are_isomorphic(graph1, graph2));
+*/
