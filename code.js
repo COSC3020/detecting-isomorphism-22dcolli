@@ -59,7 +59,7 @@ function are_isomorphic(graph1, graph2) {
 
                 let mappedNeighbor = map[neighbor];
 
-                //had the isPossible function mostly set up, but I couldn't get this if function correct or it would throw errors,
+                //had the isPossible function mostly set up, but I couldn't get this if statement correct or it would throw errors,
                 //so I used replit's ai tool to complete this inner if statement
                 if ((mappedNeighbor !== null) && (graph1[node1][neighbor] !== graph2[node2][mappedNeighbor])){
                     return false;
