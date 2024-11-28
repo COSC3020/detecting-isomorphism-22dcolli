@@ -78,10 +78,50 @@ let almostSame2 =[
 ];
 
 ////
-    
+
+////
+let empty1 = [
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0]
+];
+
+let empty2 = [
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0]
+];
+////
+
+////
+let big1 = [
+  [0, 1, 1, 1, 0, 0],
+  [1, 0, 0, 0, 1, 0],
+  [1, 0, 0, 0, 1, 0],
+  [1, 0, 0, 0, 0, 1],
+  [0, 1, 1, 0, 0, 0],
+  [0, 0, 0, 1, 0, 0]
+];
+
+let big2 = [
+  [0, 1, 1, 1, 0, 0],
+  [1, 0, 0, 0, 1, 0],
+  [1, 0, 0, 0, 1, 1],
+  [1, 0, 0, 0, 0, 1],
+  [0, 1, 1, 0, 0, 0],
+  [0, 0, 1, 1, 0, 0]
+];
+////
+
+////
+////
 
 assert(are_isomorphic(graph1, graph2) === true);
 assert(are_isomorphic(fullyConnected1, fullyConnected2) === true);
 assert(are_isomorphic(notSame1, notSame2) === false);
 assert(are_isomorphic(notSame3, notSame4) === false);
 assert(are_isomorphic(almostSame1, almostSame2) === false);
+assert(are_isomorphic(empty1, empty2) === true);
+assert(are_isomorphic(big1, big2) === false);
