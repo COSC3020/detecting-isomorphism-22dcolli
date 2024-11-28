@@ -15,4 +15,4 @@ let graph2 = [
     [0, 1, 0]
 ];
 
-assert(are_isomorphic(graph1, graph2) === true;
+assert(are_isomorphic(graph1, graph2) === true);
