@@ -26,6 +26,27 @@ are_isomorphic(graph1, graph2) {
             return true;
         }
 
+        for (let potenNext = 0; potenNext < graph2.length; potenNext++){
+
+            if (!visited[potenNext] && isPossible(node,potenNext,map)){
+
+                map[node] = potenNext;
+                visted[node = potenNext];
+
+                if(backtrack(node+1)){
+                    return true;
+                }
+
+                map[node] = null;
+                visited[potenNext] = False;
+
+            }
+            return false;
+
+        }
+
+        
+
         
     }
 
