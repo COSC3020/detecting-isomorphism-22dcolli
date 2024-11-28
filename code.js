@@ -9,7 +9,26 @@ are_isomorphic(graph1, graph2) {
     }
     
     let map = [];
+
+    for (let i=0; i < graph1.length; i++){
+        map[i] = null;
+    }
+
     let visited = []
+
+    for (let i=0; i < graph2.length; i++){
+        visited[i] = false;
+    }
+
+    function backtrack(node){
+
+        if (node === graph1.length){
+            return true;
+        }
+
+        
+    }
+
 
     //simular to the logic in graph-representations for edge traversal
     function countEdges(graph){
